@@ -1,5 +1,5 @@
 from pathlib import Path
-from portfolio_data import PROFILE, FEATURED_SERVICES, CASE_STUDIES
+from portfolio_data import PROFILE, FEATURED_SERVICES, CASE_STUDIES, PROJECTS
 
 ROOT = Path(__file__).parent
 DOCS = ROOT / "docs"
@@ -29,6 +29,18 @@ case_cards = "\n".join(
     for title, text in CASE_STUDIES
 )
 
+project_cards = "\n".join(
+    f"""
+    <article class="project-card">
+      <p class="project-tags">{item["tags"]}</p>
+      <h3>{item["title"]}</h3>
+      <p>{item["text"]}</p>
+      <a href="{item["link"]}" target="_blank">View project →</a>
+    </article>
+    """
+    for item in PROJECTS
+)
+
 html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +57,7 @@ html = f"""<!DOCTYPE html>
     <div>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -101,6 +114,18 @@ html = f"""<!DOCTYPE html>
   </p>
   <div class="case-grid">
     {case_cards}
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <p class="section-label">Projects</p>
+  <h2>Selected GitHub projects</h2>
+  <p class="section-intro">
+    A selection of projects related to document automation, OCR, data analysis,
+    reporting and public information workflows.
+  </p>
+  <div class="project-grid">
+    {project_cards}
   </div>
 </section>
 
@@ -407,7 +432,8 @@ footer {
   }
 
   .services-grid,
-  .case-grid {
+  .case-grid,
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
@@ -415,6 +441,49 @@ footer {
     margin: 28px 6% 54px;
     padding: 32px;
   }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 16px 40px rgba(43, 33, 79, .08);
+}
+
+.project-tags {
+  color: var(--purple-2);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin: 0 0 14px;
+}
+
+.project-card h3 {
+  margin: 0 0 12px;
+  color: var(--purple);
+  font-size: 22px;
+}
+
+.project-card p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 800;
+  color: var(--purple-2);
+  text-decoration: none;
+}
 }
 """
 

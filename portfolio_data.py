@@ -32,6 +32,35 @@ FEATURED_SERVICES = [
     },
 ]
 
+PROJECTS = [
+    {
+        "title": "Document Intelligence Demo",
+        "text": "Structured data transformed into professional multi-page PDF reports.",
+        "tags": "Python · PDF Automation · Reporting",
+        "link": "https://github.com/Aylin-guez/document-intelligence-demo"
+    },
+    {
+        "title": "DatosEnOrden",
+        "text": "Public data and transparency project focused on Chilean information sources.",
+        "tags": "Data · Dashboards · Public Information",
+        "link": "PON_AQUI_URL_REPO"
+    },
+    {
+        "title": "OCR Document Pipeline",
+        "text": "OCR and document extraction workflow for scanned files and structured outputs.",
+        "tags": "Python · OCR · Excel",
+        "link": "PON_AQUI_URL_REPO"
+    },
+    {
+        "title": "Inventory Document Extractor",
+        "text": "Workflow for extracting and organizing physical archive information.",
+        "tags": "OCR · Excel · Automation",
+        "link": "PON_AQUI_URL_REPO"
+    }
+]
+
+
+
 CASE_STUDIES = [
     ("Business Report", "Executive summaries, KPI tables, timelines and conclusions."),
     ("Audit Report", "Findings, risks, evidence, recommendations and audit conclusions."),
