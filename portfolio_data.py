@@ -1,7 +1,7 @@
 PROFILE = {
     "name": "Datos en orden",
-    "title": "Document Automation Specialist",
-    "subtitle": "Python • OCR • PDF Automation • Data Analytics",
+    "title": "Document Intelligence & Business Automation",
+    "subtitle": "Python - Reports - OCR - Compliance - Documentation",
     "email": "datosenorden@gmail.com",
     "github": "https://github.com/Aylin-guez",
     "linkedin": "https://www.linkedin.com/in/aylin-rodr%C3%ADguez/",
@@ -9,54 +9,74 @@ PROFILE = {
     "fiverr": "https://www.fiverr.com/sellers/aylinrodriguezz/edit",
 }
 
+ENGINE_PRODUCTS_ROOT = r"D:\SecondLifeEngine\products"
+DEFAULT_GITHUB_URL = "https://github.com/Aylin-guez/document-intelligence-demo"
+
 FEATURED_SERVICES = [
-    {
-        "title": "Business Reports",
-        "text": "Excel, CSV and operational data transformed into executive PDF reports."
-    },
-    {
-        "title": "Audit & Compliance Reports",
-        "text": "Findings, evidence, risks and recommendations organized into formal reports."
-    },
-    {
-        "title": "Document Intelligence",
-        "text": "OCR, PDF processing, extraction, classification and structured document workflows."
-    },
-    {
-        "title": "Technical Documentation",
-        "text": "Professional documentation for systems, processes, APIs and internal workflows."
-    },
-    {
-        "title": "Traceability Matrices",
-        "text": "Evidence tracking, validation, relationships and audit-ready documentation."
-    },
+    {"title": "Business Reports", "text": "Excel, CSV and operational data transformed into executive PDF reports."},
+    {"title": "Audit & Compliance Reports", "text": "Findings, evidence, risks and recommendations organized into formal reports."},
+    {"title": "OCR Document Intelligence", "text": "OCR, PDF processing, extraction, classification and document routing workflows."},
+    {"title": "Technical Documentation", "text": "System guides, architecture notes, setup steps and internal process manuals."},
+    {"title": "Traceability Matrices", "text": "Evidence links, claims, validation notes and audit-ready traceability tables."},
+]
+
+PORTFOLIO_CATEGORIES = [
+    "Reports & Analytics",
+    "Document Intelligence",
+    "Business Operations",
+    "Marketing & Sales",
+    "Hospitality & Events",
+    "Education / Course Products",
+]
+
+CASE_STUDIES = [
+    {"slug": "business_report", "title": "Business Report", "category": "Reports & Analytics", "description": "Executive summaries, KPI tables, timelines and conclusions from structured business data."},
+    {"slug": "audit_report", "title": "Audit Report", "category": "Reports & Analytics", "description": "Findings, risks, evidence, recommendations and audit conclusions in one formal report."},
+    {"slug": "traceability_matrix", "title": "Traceability Matrix", "category": "Reports & Analytics", "description": "Evidence relationships, claims, validation notes and audit-ready traceability tables."},
+    {"slug": "seo_audit_report", "title": "SEO Audit Report", "category": "Reports & Analytics", "description": "Website health, SEO priorities, technical findings and a practical action plan."},
+    {"slug": "competitor_analysis_report", "title": "Competitor Analysis Report", "category": "Reports & Analytics", "description": "Market positioning, competitor matrix, opportunity map and next-step strategy."},
+    {"slug": "customer_feedback_report", "title": "Customer Feedback Report", "category": "Reports & Analytics", "description": "Survey and review themes converted into risks, insights and operational actions."},
+    {"slug": "nonprofit_impact_report", "title": "Nonprofit Impact Report", "category": "Reports & Analytics", "description": "Program metrics, funding use and donor-ready impact storytelling."},
+    {"slug": "construction_project_status_report", "title": "Construction Project Status Report", "category": "Reports & Analytics", "description": "Weekly project progress, milestone tracking, budget watch and risk notes."},
+    {"slug": "investigation_dossier", "title": "Investigation Dossier", "category": "Document Intelligence", "description": "Structured dossier with indexes, timelines, people, evidence and findings."},
+    {"slug": "technical_documentation", "title": "Technical Documentation", "category": "Document Intelligence", "description": "System guides, workflows, architecture notes, setup instructions and technical notes."},
+    {"slug": "legal_document_bundle", "title": "Legal Document Bundle", "category": "Document Intelligence", "description": "Parties, document index, clauses, obligations and review notes for automation demos."},
+    {"slug": "meeting_minutes_generator", "title": "Meeting Minutes Generator", "category": "Document Intelligence", "description": "Attendees, agenda, decisions, action items, risks and follow-up in a clean PDF."},
+    {"slug": "proposal_generator", "title": "Proposal Generator", "category": "Business Operations", "description": "Commercial proposals with scope, deliverables, pricing, timeline and terms."},
+    {"slug": "property_dossier", "title": "Property Dossier", "category": "Business Operations", "description": "Real estate dossier with summary, features, pricing, location and next steps."},
+    {"slug": "corporate_manual", "title": "Corporate Manual", "category": "Business Operations", "description": "Internal manual with roles, policies, procedures, onboarding and compliance sections."},
+    {"slug": "product_catalog", "title": "Product Catalog", "category": "Business Operations", "description": "Product lists, prices, categories, availability, featured items and ordering notes."},
+    {"slug": "invoice_quote_generator", "title": "Invoice & Quote Generator", "category": "Business Operations", "description": "Quotes, proformas, line items, taxes, payment terms and approval sections."},
+    {"slug": "hr_employee_reports", "title": "HR Employee Reports", "category": "Business Operations", "description": "Employee profile, onboarding, training, evaluation, attendance and development plan."},
+    {"slug": "brand_book", "title": "Brand Book", "category": "Marketing & Sales", "description": "Brand values, colors, typography, voice, tone and usage guidelines."},
+    {"slug": "social_media_content_calendar", "title": "Social Media Content Calendar", "category": "Marketing & Sales", "description": "Campaign summary, content pillars, channel mix, weekly calendar and production tasks."},
+    {"slug": "etsy_shop_optimization_report", "title": "Etsy Shop Optimization Report", "category": "Marketing & Sales", "description": "Marketplace listing audit with keyword, photo, conversion and 30-day improvement notes."},
+    {"slug": "email_marketing_campaign_report", "title": "Email Marketing Campaign Report", "category": "Marketing & Sales", "description": "Email metrics, creative notes, segmentation ideas and next-test planning."},
+    {"slug": "sales_pipeline_report", "title": "Sales Pipeline Report", "category": "Marketing & Sales", "description": "Pipeline stages, forecast value, deal risks and next actions for sales teams."},
+    {"slug": "creator_media_kit", "title": "Creator Media Kit", "category": "Marketing & Sales", "description": "Creator profile, audience metrics, partnership packages and brand collaboration notes."},
+    {"slug": "restaurant_menu_profit_report", "title": "Restaurant Menu Profit Report", "category": "Hospitality & Events", "description": "Menu profitability, item roles, pricing notes and operator action plan."},
+    {"slug": "airbnb_guest_welcome_book", "title": "Airbnb Guest Welcome Book", "category": "Hospitality & Events", "description": "Guest arrival guide, house rules, local recommendations and checkout details."},
+    {"slug": "event_planning_pack", "title": "Event Planning Pack", "category": "Hospitality & Events", "description": "Event snapshot, vendor tracker, budget, run-of-show and coordinator checklist."},
+    {"slug": "grant_funding_proposal", "title": "Grant Funding Proposal", "category": "Education / Course Products", "description": "Project summary, organization profile, activities, budget, impact and sustainability."},
+    {"slug": "course_launch_planner", "title": "Course Launch Planner", "category": "Education / Course Products", "description": "Course offer, launch timeline, asset checklist, metrics and weekly execution plan."},
+]
+
+HOME_FEATURED_SLUGS = [
+    "business_report",
+    "audit_report",
+    "traceability_matrix",
+    "technical_documentation",
+    "investigation_dossier",
+    "legal_document_bundle",
 ]
 
 PROJECTS = [
-    {
-        "title": "Document Intelligence Demo",
-        "text": "Structured data transformed into professional multi-page PDF reports.",
-        "tags": "Python · PDF Automation · Reporting",
-        "link": "https://github.com/Aylin-guez/document-intelligence-demo"
-    },
-    {
-        "title": "DatosEnOrden",
-        "text": "Public data and transparency project focused on Chilean information sources.",
-        "tags": "Data · Dashboards · Public Information",
-        "link": "PON_AQUI_URL_REPO"
-    },
-    {
-        "title": "OCR Document Pipeline",
-        "text": "OCR and document extraction workflow for scanned files and structured outputs.",
-        "tags": "Python · OCR · Excel",
-        "link": "PON_AQUI_URL_REPO"
-    },
-    {
-        "title": "Inventory Document Extractor",
-        "text": "Workflow for extracting and organizing physical archive information.",
-        "tags": "OCR · Excel · Automation",
-        "link": "PON_AQUI_URL_REPO"
-    }
+    {"title": "OCR Document Intelligence Pipeline", "text": "Extracts data from PDFs and images and turns it into structured outputs.", "tags": "Python - OCR - Reporting", "link": "https://github.com/Aylin-guez/document-intelligence-demo"},
+    {"title": "Messy Data Reconstruction Pipeline", "text": "Normalizes messy operational data into structured tables and usable outputs.", "tags": "Python - Data Cleaning - ETL", "link": "https://github.com/Aylin-guez/messy-data-reconstruction-pipeline"},
+    {"title": "PDF Intelligence Pipeline", "text": "Processes PDFs with extraction, classification and automated document logic.", "tags": "Python - PDF Automation - OCR", "link": "https://github.com/Aylin-guez/pdf_intelligence_pipeline"},
+    {"title": "Entity Relationship Dashboard", "text": "Visualizes entity connections, patterns and operational relationships.", "tags": "Data - Dashboard - Analysis", "link": "https://github.com/Aylin-guez/entity_relationship_dashboard"},
+    {"title": "Report Cross Reference Automation", "text": "Cross-references report sections, sources and supporting evidence automatically.", "tags": "Python - Reporting - Automation", "link": "https://github.com/Aylin-guez/report-cross-reference-automation"},
+    {"title": "Financial Transactions Dashboard", "text": "Turns transaction records into interactive financial tracking views.", "tags": "Data - Finance - Dashboard", "link": "https://github.com/Aylin-guez/financial-transactions-dashboard"},
 ]
 
 TEXT = {
@@ -69,21 +89,24 @@ TEXT = {
         "nav_projects": "Projects",
         "nav_contact": "Contact",
         "hero_text": "I build automation workflows that transform spreadsheets, PDFs, OCR outputs and structured data into professional reports, dossiers, manuals and business documents.",
-        "hero_panel_title": "Document Automation",
-        "hero_panel_count": "15+",
-        "hero_panel_label": "workflow demos",
-        "hero_panel_stack": "Python • OCR • PDF Reports • Data Analysis",
+        "hero_panel_title": "Document Intelligence & Business Automation",
+        "hero_panel_count": "25+",
+        "hero_panel_label": "industry workflows",
+        "hero_panel_stack": "Python - Automation - Reports - OCR - Data",
         "services_label": "Services",
         "services_title": "Core automation services",
-        "services_intro": "I focus on repetitive reporting and document workflows where teams lose time copying, formatting and rebuilding the same files every week or month.",
+        "services_intro": "I focus on report-heavy and compliance-oriented workflows where teams lose time copying, formatting and rebuilding the same files every week or month.",
         "portfolio_label": "Portfolio",
-        "portfolio_title": "15 document automation workflows",
-        "portfolio_intro": "These case studies show how the same automation approach can adapt to different industries, formats and business needs.",
-        "case_label": "Case Study",
+        "portfolio_title": "Browse the full catalog by industry",
+        "portfolio_intro": "The premium workflows are highlighted above. The full catalog stays below, grouped by the business problem each workflow solves.",
+        "featured_title": "Featured workflows",
+        "featured_intro": "Six premium workflows focused on corporate reporting, compliance and structured documentation.",
         "projects_label": "Projects",
         "projects_title": "Selected GitHub projects",
-        "projects_intro": "A selection of projects related to document automation, OCR, data analysis, reporting and public information workflows.",
-        "view_project": "View project →",
+        "projects_intro": "Projects related to document automation, OCR, data analysis, reporting and public information workflows.",
+        "view_showcase": "View Showcase",
+        "github": "GitHub",
+        "view_project": "View project",
         "automate_label": "What I automate",
         "automate_title": "From messy input to polished output",
         "checklist": [
@@ -91,11 +114,11 @@ TEXT = {
             "OCR and information extraction from documents",
             "Audit, compliance and traceability documentation",
             "Business reports, proposals, manuals and technical documentation",
-            "Repetitive document workflows that waste time every month"
+            "Marketing, hospitality, sales and education document workflows",
         ],
         "contact_title": "Need to automate a recurring report or document workflow?",
         "contact_text": "Send me a message and I can review the process with you.",
-        "footer": "Document Automation & Data Analytics"
+        "footer": "Document Automation & Data Analytics",
     },
     "es": {
         "lang": "es",
@@ -106,50 +129,35 @@ TEXT = {
         "nav_projects": "Proyectos",
         "nav_contact": "Contacto",
         "hero_text": "Construyo automatizaciones que transforman planillas, PDFs, resultados OCR y datos estructurados en reportes profesionales, expedientes, manuales y documentos de negocio.",
-        "hero_panel_title": "Automatización Documental",
-        "hero_panel_count": "15+",
-        "hero_panel_label": "demos de flujos documentales",
-        "hero_panel_stack": "Python • OCR • Reportes PDF • Análisis de Datos",
+        "hero_panel_title": "Inteligencia Documental y Automatizacion de Negocio",
+        "hero_panel_count": "25+",
+        "hero_panel_label": "flujos por industria",
+        "hero_panel_stack": "Python - Automatizacion - Reportes - OCR - Datos",
         "services_label": "Servicios",
-        "services_title": "Servicios principales de automatización",
-        "services_intro": "Me enfoco en reportes repetitivos y flujos documentales donde los equipos pierden tiempo copiando, formateando y reconstruyendo los mismos archivos cada semana o cada mes.",
+        "services_title": "Servicios principales de automatizacion",
+        "services_intro": "Me enfoco en flujos intensivos en reportes y compliance donde los equipos pierden tiempo copiando, formateando y reconstruyendo los mismos archivos cada semana o cada mes.",
         "portfolio_label": "Portafolio",
-        "portfolio_title": "15 flujos de automatización documental",
-        "portfolio_intro": "Estos casos muestran cómo el mismo enfoque de automatización puede adaptarse a distintas industrias, formatos y necesidades de negocio.",
-        "case_label": "Caso de estudio",
+        "portfolio_title": "Explora el catalogo completo por industria",
+        "portfolio_intro": "Los flujos premium quedan arriba. El catalogo completo sigue abajo, agrupado por el problema de negocio que resuelve cada flujo.",
+        "featured_title": "Flujos destacados",
+        "featured_intro": "Seis flujos premium enfocados en reportes corporativos, compliance y documentacion estructurada.",
         "projects_label": "Proyectos",
         "projects_title": "Proyectos seleccionados en GitHub",
-        "projects_intro": "Una selección de proyectos relacionados con automatización documental, OCR, análisis de datos, reportes e información pública.",
-        "view_project": "Ver proyecto →",
-        "automate_label": "Qué automatizo",
+        "projects_intro": "Proyectos relacionados con automatizacion documental, OCR, analisis de datos, reportes e informacion publica.",
+        "view_showcase": "Ver showcase",
+        "github": "GitHub",
+        "view_project": "Ver proyecto",
+        "automate_label": "Que automatizo",
         "automate_title": "De datos desordenados a documentos profesionales",
         "checklist": [
             "Reportes PDF generados desde Excel, CSV o datos estructurados",
-            "OCR y extracción de información desde documentos",
-            "Documentación de auditoría, compliance y trazabilidad",
-            "Reportes de negocio, propuestas, manuales y documentación técnica",
-            "Flujos documentales repetitivos que consumen tiempo cada mes"
+            "OCR y extraccion de informacion desde documentos",
+            "Documentacion de auditoria, compliance y trazabilidad",
+            "Reportes de negocio, propuestas, manuales y documentacion tecnica",
+            "Flujos documentales para marketing, hoteleria, ventas y educacion",
         ],
-        "contact_title": "¿Necesitas automatizar un reporte o flujo documental repetitivo?",
-        "contact_text": "Envíame un mensaje y puedo revisar el proceso contigo.",
-        "footer": "Automatización Documental y Análisis de Datos"
-    }
+        "contact_title": "Necesitas automatizar un reporte o flujo documental repetitivo?",
+        "contact_text": "Enviame un mensaje y puedo revisar el proceso contigo.",
+        "footer": "Automatizacion Documental y Analisis de Datos",
+    },
 }
-
-CASE_STUDIES = [
-    ("Business Report", "Executive summaries, KPI tables, timelines and conclusions."),
-    ("Audit Report", "Findings, risks, evidence, recommendations and audit conclusions."),
-    ("Investigation Dossier", "Structured document packages with indexes, timelines and evidence."),
-    ("Traceability Matrix", "Relationships, claims, evidence links and validation notes."),
-    ("Technical Documentation", "System guides, workflows, architecture notes and usage instructions."),
-    ("Proposal Generator", "Commercial proposals with scope, pricing, timeline and terms."),
-    ("Property Dossier", "Real estate dossiers with features, pricing, location and contact details."),
-    ("Corporate Manual", "Internal manuals with roles, policies, procedures and onboarding steps."),
-    ("Product Catalog", "Product lists, prices, categories, availability and ordering notes."),
-    ("Brand Book", "Brand values, colors, typography, voice and usage guidelines."),
-    ("Invoice & Quote Generator", "Quotes, proformas, line items, taxes and approval sections."),
-    ("HR Employee Reports", "Employee profiles, training, evaluations, attendance and development plans."),
-    ("Grant Funding Proposal", "Project summaries, budgets, activities, impact and sustainability."),
-    ("Legal Document Bundle", "Parties, document index, clauses, obligations and review notes."),
-    ("Meeting Minutes Generator", "Attendees, agenda, decisions, action items, risks and follow-up."),
-]
