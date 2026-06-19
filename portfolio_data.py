@@ -1,5 +1,5 @@
 PROFILE = {
-    "name": "Aylin R.",
+    "name": "Datos en orden",
     "title": "Document Automation Specialist",
     "subtitle": "Python • OCR • PDF Automation • Data Analytics",
     "email": "datosenorden@gmail.com",
