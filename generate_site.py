@@ -98,6 +98,8 @@ def render_page(lang: str) -> str:
       <a href="#contact">{t["nav_contact"]}</a>
       <a href="{t["other_lang_url"]}">{t["other_lang_label"]}</a>
       <button id="theme-toggle" type="button">🌙</button>
+      <a href="es.html">ES</a>
+      <button id="theme-toggle">🌙</button>
     </div>
   </nav>
 
