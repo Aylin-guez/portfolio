@@ -59,7 +59,82 @@ PROJECTS = [
     }
 ]
 
-
+TEXT = {
+    "en": {
+        "lang": "en",
+        "other_lang_url": "es.html",
+        "other_lang_label": "ES",
+        "nav_services": "Services",
+        "nav_portfolio": "Portfolio",
+        "nav_projects": "Projects",
+        "nav_contact": "Contact",
+        "hero_text": "I build automation workflows that transform spreadsheets, PDFs, OCR outputs and structured data into professional reports, dossiers, manuals and business documents.",
+        "hero_panel_title": "Document Automation",
+        "hero_panel_count": "15+",
+        "hero_panel_label": "workflow demos",
+        "hero_panel_stack": "Python • OCR • PDF Reports • Data Analysis",
+        "services_label": "Services",
+        "services_title": "Core automation services",
+        "services_intro": "I focus on repetitive reporting and document workflows where teams lose time copying, formatting and rebuilding the same files every week or month.",
+        "portfolio_label": "Portfolio",
+        "portfolio_title": "15 document automation workflows",
+        "portfolio_intro": "These case studies show how the same automation approach can adapt to different industries, formats and business needs.",
+        "case_label": "Case Study",
+        "projects_label": "Projects",
+        "projects_title": "Selected GitHub projects",
+        "projects_intro": "A selection of projects related to document automation, OCR, data analysis, reporting and public information workflows.",
+        "view_project": "View project →",
+        "automate_label": "What I automate",
+        "automate_title": "From messy input to polished output",
+        "checklist": [
+            "PDF reports generated from Excel, CSV or structured data",
+            "OCR and information extraction from documents",
+            "Audit, compliance and traceability documentation",
+            "Business reports, proposals, manuals and technical documentation",
+            "Repetitive document workflows that waste time every month"
+        ],
+        "contact_title": "Need to automate a recurring report or document workflow?",
+        "contact_text": "Send me a message and I can review the process with you.",
+        "footer": "Document Automation & Data Analytics"
+    },
+    "es": {
+        "lang": "es",
+        "other_lang_url": "index.html",
+        "other_lang_label": "EN",
+        "nav_services": "Servicios",
+        "nav_portfolio": "Portafolio",
+        "nav_projects": "Proyectos",
+        "nav_contact": "Contacto",
+        "hero_text": "Construyo automatizaciones que transforman planillas, PDFs, resultados OCR y datos estructurados en reportes profesionales, expedientes, manuales y documentos de negocio.",
+        "hero_panel_title": "Automatización Documental",
+        "hero_panel_count": "15+",
+        "hero_panel_label": "demos de flujos documentales",
+        "hero_panel_stack": "Python • OCR • Reportes PDF • Análisis de Datos",
+        "services_label": "Servicios",
+        "services_title": "Servicios principales de automatización",
+        "services_intro": "Me enfoco en reportes repetitivos y flujos documentales donde los equipos pierden tiempo copiando, formateando y reconstruyendo los mismos archivos cada semana o cada mes.",
+        "portfolio_label": "Portafolio",
+        "portfolio_title": "15 flujos de automatización documental",
+        "portfolio_intro": "Estos casos muestran cómo el mismo enfoque de automatización puede adaptarse a distintas industrias, formatos y necesidades de negocio.",
+        "case_label": "Caso de estudio",
+        "projects_label": "Proyectos",
+        "projects_title": "Proyectos seleccionados en GitHub",
+        "projects_intro": "Una selección de proyectos relacionados con automatización documental, OCR, análisis de datos, reportes e información pública.",
+        "view_project": "Ver proyecto →",
+        "automate_label": "Qué automatizo",
+        "automate_title": "De datos desordenados a documentos profesionales",
+        "checklist": [
+            "Reportes PDF generados desde Excel, CSV o datos estructurados",
+            "OCR y extracción de información desde documentos",
+            "Documentación de auditoría, compliance y trazabilidad",
+            "Reportes de negocio, propuestas, manuales y documentación técnica",
+            "Flujos documentales repetitivos que consumen tiempo cada mes"
+        ],
+        "contact_title": "¿Necesitas automatizar un reporte o flujo documental repetitivo?",
+        "contact_text": "Envíame un mensaje y puedo revisar el proceso contigo.",
+        "footer": "Automatización Documental y Análisis de Datos"
+    }
+}
 
 CASE_STUDIES = [
     ("Business Report", "Executive summaries, KPI tables, timelines and conclusions."),

@@ -1,5 +1,5 @@
 from pathlib import Path
-from portfolio_data import PROFILE, FEATURED_SERVICES, CASE_STUDIES, PROJECTS
+from portfolio_data import PROFILE, FEATURED_SERVICES, CASE_STUDIES, PROJECTS, TEXT
 
 ROOT = Path(__file__).parent
 DOCS = ROOT / "docs"
@@ -40,9 +40,46 @@ project_cards = "\n".join(
     """
     for item in PROJECTS
 )
+def render_page(lang: str) -> str:
+    t = TEXT[lang]
 
-html = f"""<!DOCTYPE html>
-<html lang="en">
+    service_cards = "\n".join(
+        f"""
+        <article class="service-card">
+          <h3>{item["title"]}</h3>
+          <p>{item["text"]}</p>
+        </article>
+        """
+        for item in FEATURED_SERVICES
+    )
+
+    case_cards = "\n".join(
+        f"""
+        <article class="case-card">
+          <span>{t["case_label"]}</span>
+          <h3>{title}</h3>
+          <p>{text}</p>
+        </article>
+        """
+        for title, text in CASE_STUDIES
+    )
+
+    project_cards = "\n".join(
+        f"""
+        <article class="project-card">
+          <p class="project-tags">{item["tags"]}</p>
+          <h3>{item["title"]}</h3>
+          <p>{item["text"]}</p>
+          <a href="{item["link"]}" target="_blank">{t["view_project"]}</a>
+        </article>
+        """
+        for item in PROJECTS
+    )
+
+    checklist = "\n".join(f"<p>{item}</p>" for item in t["checklist"])
+
+    return f"""<!DOCTYPE html>
+<html lang="{t["lang"]}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -54,11 +91,13 @@ html = f"""<!DOCTYPE html>
 <header class="hero">
   <nav class="nav">
     <strong>{PROFILE["name"]}</strong>
-    <div>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-links">
+      <a href="#services">{t["nav_services"]}</a>
+      <a href="#portfolio">{t["nav_portfolio"]}</a>
+      <a href="#projects">{t["nav_projects"]}</a>
+      <a href="#contact">{t["nav_contact"]}</a>
+      <a href="{t["other_lang_url"]}">{t["other_lang_label"]}</a>
+      <button id="theme-toggle" type="button">🌙</button>
     </div>
   </nav>
 
@@ -66,11 +105,7 @@ html = f"""<!DOCTYPE html>
     <div>
       <p class="eyebrow">{PROFILE["subtitle"]}</p>
       <h1>{PROFILE["title"]}</h1>
-      <p class="hero-text">
-        I build automation workflows that transform spreadsheets, PDFs,
-        OCR outputs and structured data into professional reports,
-        dossiers, manuals and business documents.
-      </p>
+      <p class="hero-text">{t["hero_text"]}</p>
 
       <div class="buttons">
         <a href="{PROFILE["github"]}">GitHub</a>
@@ -82,11 +117,11 @@ html = f"""<!DOCTYPE html>
     </div>
 
     <div class="hero-panel">
-      <p>Document Automation</p>
-      <h2>15+</h2>
-      <span>workflow demos</span>
+      <p>{t["hero_panel_title"]}</p>
+      <h2>{t["hero_panel_count"]}</h2>
+      <span>{t["hero_panel_label"]}</span>
       <hr>
-      <p>Python • OCR • PDF Reports • Data Analysis</p>
+      <p>{t["hero_panel_stack"]}</p>
     </div>
   </div>
 </header>
@@ -94,36 +129,27 @@ html = f"""<!DOCTYPE html>
 <main>
 
 <section id="services" class="section">
-  <p class="section-label">Services</p>
-  <h2>Core automation services</h2>
-  <p class="section-intro">
-    I focus on repetitive reporting and document workflows where teams lose time copying,
-    formatting and rebuilding the same files every week or month.
-  </p>
+  <p class="section-label">{t["services_label"]}</p>
+  <h2>{t["services_title"]}</h2>
+  <p class="section-intro">{t["services_intro"]}</p>
   <div class="services-grid">
     {service_cards}
   </div>
 </section>
 
 <section id="portfolio" class="section alt">
-  <p class="section-label">Portfolio</p>
-  <h2>15 document automation workflows</h2>
-  <p class="section-intro">
-    These case studies show how the same automation approach can adapt to different
-    industries, formats and business needs.
-  </p>
+  <p class="section-label">{t["portfolio_label"]}</p>
+  <h2>{t["portfolio_title"]}</h2>
+  <p class="section-intro">{t["portfolio_intro"]}</p>
   <div class="case-grid">
     {case_cards}
   </div>
 </section>
 
 <section id="projects" class="section">
-  <p class="section-label">Projects</p>
-  <h2>Selected GitHub projects</h2>
-  <p class="section-intro">
-    A selection of projects related to document automation, OCR, data analysis,
-    reporting and public information workflows.
-  </p>
+  <p class="section-label">{t["projects_label"]}</p>
+  <h2>{t["projects_title"]}</h2>
+  <p class="section-intro">{t["projects_intro"]}</p>
   <div class="project-grid">
     {project_cards}
   </div>
@@ -131,29 +157,42 @@ html = f"""<!DOCTYPE html>
 
 <section class="section split">
   <div>
-    <p class="section-label">What I automate</p>
-    <h2>From messy input to polished output</h2>
+    <p class="section-label">{t["automate_label"]}</p>
+    <h2>{t["automate_title"]}</h2>
   </div>
   <div class="checklist">
-    <p>PDF reports generated from Excel, CSV or structured data</p>
-    <p>OCR and information extraction from documents</p>
-    <p>Audit, compliance and traceability documentation</p>
-    <p>Business reports, proposals, manuals and technical documentation</p>
-    <p>Repetitive document workflows that waste time every month</p>
+    {checklist}
   </div>
 </section>
 
 <section id="contact" class="contact-section">
-  <h2>Need to automate a recurring report or document workflow?</h2>
-  <p>Send me a message and I can review the process with you.</p>
+  <h2>{t["contact_title"]}</h2>
+  <p>{t["contact_text"]}</p>
   <a href="mailto:{PROFILE["email"]}">{PROFILE["email"]}</a>
 </section>
 
 </main>
 
 <footer>
-  <p>© 2026 {PROFILE["name"]} — Document Automation & Data Analytics</p>
+  <p>© 2026 {PROFILE["name"]} — {t["footer"]}</p>
 </footer>
+
+<script>
+  const button = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {{
+    document.body.classList.add("dark");
+    button.textContent = "☀️";
+  }}
+
+  button.addEventListener("click", () => {{
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    button.textContent = isDark ? "☀️" : "🌙";
+  }});
+</script>
 
 </body>
 </html>
@@ -484,10 +523,70 @@ footer {
   color: var(--purple-2);
   text-decoration: none;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+#theme-toggle {
+  border: 0;
+  background: rgba(255,255,255,.18);
+  color: white;
+  border-radius: 999px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+body.dark {
+  --bg: #11101a;
+  --ink: #f7f4ff;
+  --muted: #c8c1d8;
+  --card: #1b1828;
+  --line: #3b3354;
+  --soft: #211b34;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body.dark .section.alt {
+  background: #151321;
+}
+
+body.dark .service-card,
+body.dark .case-card,
+body.dark .project-card,
+body.dark .checklist {
+  background: var(--card);
+  border-color: var(--line);
+}
+
+body.dark .service-card h3,
+body.dark .case-card h3,
+body.dark .project-card h3 {
+  color: #efe8ff;
+}
+
+body.dark .service-card p,
+body.dark .case-card p,
+body.dark .project-card p,
+body.dark .section-intro,
+body.dark .checklist p {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
 }
 """
 
-(DOCS / "index.html").write_text(html, encoding="utf-8")
+(DOCS / "index.html").write_text(render_page("en"), encoding="utf-8")
+(DOCS / "es.html").write_text(render_page("es"), encoding="utf-8")
 (DOCS / "style.css").write_text(css, encoding="utf-8")
 
 print("✅ Portfolio v2 generated in docs/")

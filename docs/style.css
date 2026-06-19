@@ -323,4 +323,63 @@ footer {
   color: var(--purple-2);
   text-decoration: none;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+#theme-toggle {
+  border: 0;
+  background: rgba(255,255,255,.18);
+  color: white;
+  border-radius: 999px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+body.dark {
+  --bg: #11101a;
+  --ink: #f7f4ff;
+  --muted: #c8c1d8;
+  --card: #1b1828;
+  --line: #3b3354;
+  --soft: #211b34;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body.dark .section.alt {
+  background: #151321;
+}
+
+body.dark .service-card,
+body.dark .case-card,
+body.dark .project-card,
+body.dark .checklist {
+  background: var(--card);
+  border-color: var(--line);
+}
+
+body.dark .service-card h3,
+body.dark .case-card h3,
+body.dark .project-card h3 {
+  color: #efe8ff;
+}
+
+body.dark .service-card p,
+body.dark .case-card p,
+body.dark .project-card p,
+body.dark .section-intro,
+body.dark .checklist p {
+  color: var(--muted);
+}
+
+@media (max-width: 700px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
 }
